@@ -40,63 +40,94 @@ const AddCoffee = () => {
       });
   };
   return (
-    <div>
-      <h2></h2>
-      <div className="card flex">
+    <div className="w-10/12 mx-auto py-10">
+      <div className="flex flex-col justify-center items-center w-6/12 mx-auto">
+        <h2 className="text-center text-2xl font-bold text-[#331A15] p-4">
+          Add New Coffee
+        </h2>
+        <p className="text-center">
+          It is a long established fact that a reader will be distraceted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using Content here.
+        </p>
+      </div>
+      <div className="card bg-slate-100 p-6 my-6 font-serif">
         <form className="card-body" onSubmit={handleSubmit}>
-          <label className="label">Coffee Name</label>
-          <input
-            name="name"
-            type="text"
-            className="input"
-            placeholder="Coffee Name"
-          />
-          <label className="label">Chef</label>
-          <input
-            name="chef"
-            type="text"
-            className="input"
-            placeholder="Enter Coffee Chef"
-          />
+          <div className="flex justify-center items-center w-full gap-6 py-3">
+            <div className="flex w-full flex-col">
+              <label className="label">Coffee Name</label>
+              <input
+                name="name"
+                type="text"
+                className="input w-full border-none "
+                placeholder="Coffee Name"
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <label className="label">Chef</label>
+              <input
+                name="chef"
+                type="text"
+                className="input w-full border-none "
+                placeholder="Enter Coffee Chef"
+              />
+            </div>
+          </div>
 
-          <label className="label">Supplier</label>
-          <input
-            name="supplier"
-            type="text"
-            className="input"
-            placeholder="Enter coffee supplier"
-          />
+          <div className="flex gap-6 pb-3">
+            <div className="flex flex-col w-full">
+              <label className="label">Taste</label>
+              <input
+                name="taste"
+                type="text"
+                className="input w-full border-none"
+                placeholder="Enter coffee taste"
+              />
+            </div>
 
-          <label className="label">Taste</label>
-          <input
-            name="taste"
-            type="text"
-            className="input"
-            placeholder="Enter coffee taste"
-          />
-          <label className="label">Category</label>
-          <input
-            name="category"
-            type="text"
-            className="input"
-            placeholder="Enter coffee category"
-          />
-          <label className="label">Details</label>
-          <input
-            name="details"
-            type="text"
-            className="input"
-            placeholder="Enter coffee details"
-          />
-          <label className="label">Photo</label>
-          <input
-            type="url"
-            name="photoURL"
-            className="input"
-            placeholder="Enter photo"
-          />
+            <div className="flex flex-col w-full">
+              <label className="label">Category</label>
+              <input
+                name="category"
+                type="text"
+                className="input w-full border-none bg-white"
+                placeholder="Enter coffee category"
+              />
+            </div>
+          </div>
+          <div className="flex w-full gap-6 pb-3">
+            <div className="flex flex-col w-full">
+              <label className="label">Details</label>
+              <input
+                name="details"
+                type="text"
+                className="input w-full border-none "
+                placeholder="Enter coffee details"
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <label className="label">Taste</label>
+              <input
+                name="taste"
+                type="text"
+                className="input w-full border-none"
+                placeholder="Enter coffee taste"
+              />
+            </div>
+            
+          </div>
+       
+              <label className="label">Photo</label>
+              <input
+                type="url"
+                name="photoURL"
+                className="input w-full border-none "
+                placeholder="Enter photo"
+              />
+           
 
-          <button className="btn btn-neutral mt-4">add Coffee</button>
+          <button className="btn bg-[#D2B48C]  mt-4">add Coffee</button>
         </form>
       </div>
     </div>
@@ -104,4 +135,3 @@ const AddCoffee = () => {
 };
 
 export default AddCoffee;
-
