@@ -16,7 +16,7 @@ const SignUp = () => {
         const createdAt = res?.user?.metadata?.creationTime;
         const newUser = { email, createdAt };
         console.log(res.user);
-        fetch("http://localhost:5000/users", {
+        fetch("https://v1-coffee-store-server-inky.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -26,8 +26,8 @@ const SignUp = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            if(data.insertedId){
-              alert('user created in db')
+            if (data.insertedId) {
+              alert("user created in db");
             }
           });
       })

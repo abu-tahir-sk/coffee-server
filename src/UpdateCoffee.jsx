@@ -2,7 +2,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
-      const navigate = useNavigate()
+  const navigate = useNavigate();
   const loadedCoffees = useLoaderData();
   const { _id, name, photoURL } = loadedCoffees;
 
@@ -26,7 +26,7 @@ const UpdateCoffee = () => {
       photoURL,
     };
     console.log(updateCoffee);
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(`https://v1-coffee-store-server-inky.vercel.app/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -36,19 +36,16 @@ const UpdateCoffee = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.modifiedCount > 0){
-            Swal.fire({
-          title: "Success",
-          text: "Coffee Updated Successfully",
-          icon: "success",
-          confirmButtonText: "Cool",
-          
-        });
-        navigate('/')
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success",
+            text: "Coffee Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+          navigate("/");
         }
-        
       });
-      
   };
 
   return (
@@ -56,7 +53,7 @@ const UpdateCoffee = () => {
       <h2 className="font-bold text-4xl">Update Coffee : {name}</h2>
       <div className="card  bg-slate-100 p-6 my-6 font-serif">
         <form className="card-body" onSubmit={handleSubmit}>
-           <div className="flex justify-center items-center w-full gap-6 py-3">
+          <div className="flex justify-center items-center w-full gap-6 py-3">
             <div className="flex w-full flex-col">
               <label className="label">Coffee Name</label>
               <input
@@ -117,20 +114,17 @@ const UpdateCoffee = () => {
                 placeholder="Enter coffee taste"
               />
             </div>
-            
           </div>
-       
-              <label className="label">Photo</label>
-              <input
-                type="url"
-                name="photoURL"
-                className="input w-full border-none "
-                placeholder="Enter photo"
-              />
-           
+
+          <label className="label">Photo</label>
+          <input
+            type="url"
+            name="photoURL"
+            className="input w-full border-none "
+            placeholder="Enter photo"
+          />
 
           <button className="btn bg-[#D2B48C]  mt-4">Update Coffee</button>
-         
         </form>
       </div>
     </div>

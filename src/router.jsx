@@ -15,7 +15,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
-        loader: () => fetch("http://localhost:5000/coffee"),
+        loader: () =>
+          fetch("https://v1-coffee-store-server-inky.vercel.app/coffee"),
       },
       {
         path: "/signIn",
@@ -28,19 +29,22 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <Users></Users>,
-        loader:()=>fetch('http://localhost:5000/users')
+        loader: () =>
+          fetch("https://v1-coffee-store-server-inky.vercel.app/users"),
       },
-       {
-    path: "/addCoffee",
-    element: <AddCoffee />,
-  },
-  {
-    path: "/updateCoffee/:id",
-    element: <UpdateCoffee />,
-    loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`),
-  },
+      {
+        path: "/addCoffee",
+        element: <AddCoffee />,
+      },
+      {
+        path: "/updateCoffee/:id",
+        element: <UpdateCoffee />,
+        loader: ({ params }) =>
+          fetch(
+            `https://v1-coffee-store-server-inky.vercel.app/coffee/${params.id}`
+          ),
+      },
     ],
   },
- 
 ]);
 export default router;

@@ -21,7 +21,7 @@ const AddCoffee = () => {
       photoURL,
     };
     console.log(newCoffee);
-    fetch("http://localhost:5000/coffee", {
+    fetch("https://v1-coffee-store-server-inky.vercel.app/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -115,17 +115,15 @@ const AddCoffee = () => {
                 placeholder="Enter coffee taste"
               />
             </div>
-            
           </div>
-       
-              <label className="label">Photo</label>
-              <input
-                type="url"
-                name="photoURL"
-                className="input w-full border-none "
-                placeholder="Enter photo"
-              />
-           
+
+          <label className="label">Photo</label>
+          <input
+            type="url"
+            name="photoURL"
+            className="input w-full border-none "
+            placeholder="Enter photo"
+          />
 
           <button className="btn bg-[#D2B48C]  mt-4">add Coffee</button>
         </form>
