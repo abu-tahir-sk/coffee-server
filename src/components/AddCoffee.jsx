@@ -21,7 +21,7 @@ const AddCoffee = () => {
       photoURL,
     };
     console.log(newCoffee);
-    fetch("https://v1-coffee-store-server-inky.vercel.app/coffee", {
+    fetch("https://coffee-store-server-42.vercel.app/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",

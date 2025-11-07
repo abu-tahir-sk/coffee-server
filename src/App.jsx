@@ -8,7 +8,7 @@ import Follow from "./components/Follow";
 
 function App() {
   const loadedCoffees = useLoaderData();
-  const [coffees, setCoffees] = useState(loadedCoffees);
+  const [coffees, setCoffees] = useState([loadedCoffees]);
 
   return (
     <div>

@@ -18,7 +18,7 @@ const SignIn = () => {
           email,
           lastSignInTime,
         };
-        fetch(`https://v1-coffee-store-server-inky.vercel.app/users`, {
+        fetch(`https://coffee-store-server-42.vercel.app/users`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

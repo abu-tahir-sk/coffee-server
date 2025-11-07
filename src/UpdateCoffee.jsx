@@ -26,7 +26,7 @@ const UpdateCoffee = () => {
       photoURL,
     };
     console.log(updateCoffee);
-    fetch(`https://v1-coffee-store-server-inky.vercel.app/coffee/${_id}`, {
+    fetch(`https://coffee-store-server-42.vercel.app/coffee/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

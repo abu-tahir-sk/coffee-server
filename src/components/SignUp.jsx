@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
+import axios from "axios";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -16,20 +17,27 @@ const SignUp = () => {
         const createdAt = res?.user?.metadata?.creationTime;
         const newUser = { email, createdAt };
         console.log(res.user);
-        fetch("https://v1-coffee-store-server-inky.vercel.app/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        })
-          .then((res) => res.json())
+
+        axios
+          .post("https://coffee-store-server-42.vercel.app/users", user)
           .then((data) => {
-            console.log(data);
-            if (data.insertedId) {
-              alert("user created in db");
-            }
+            console.log(data.data);
           });
+
+        // fetch("https://coffee-store-server-42.vercel.app/users", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(newUser),
+        // })
+        // .then((res) => res.json())
+        // .then((data) => {
+        //   console.log(data);
+        //   if (data.insertedId) {
+        //     alert("user created in db");
+        //   }
+        // });
       })
       .catch((error) => console.log(error));
   };

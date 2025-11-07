@@ -1,10 +1,19 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Users = () => {
   const loadedUsers = useLoaderData();
-  const [users, setUsers] = useState(loadedUsers);
+  const [users, setUsers] = useState([loadedUsers]);
+
+  // useEffect(()=>{
+  //   axios.get("/")
+  //   .then(data=>{
+  //     console.log(data.data)
+  //   })
+  // },[])
+
   const handleUserDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -18,7 +27,7 @@ const Users = () => {
       if (result.isConfirmed) {
         //
 
-        fetch(`https://v1-coffee-store-server-inky.vercel.app/users/${id}`, {
+        fetch(`https://coffee-store-server-42.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
